@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/estiloB.css">
+    <title>Formulario Registro</title>
+    <style>
+        .form-register {
+            display: flex;
+        }
+        .column {
+            flex: 1;
+            padding: 10px;
+            margin: 5px;
+            position: relative; /* Añadido para permitir el posicionamiento absoluto del botón */
+        }
+
+        .boton-enviar {
+            position: absolute; /* Posiciona el botón de manera absoluta */
+            bottom: 10px; /* Ajusta la distancia desde el fondo del contenedor */
+            left: 10px; /* Ajusta la distancia desde el lado izquierdo del contenedor */
+            width: calc(100% - 20px); /* Ajusta el ancho del botón */
+        }
+        .form-return {
+            display: flex;
+        }
+        
+    </style>
+</head>
+<!-- Encabezado -->
+</style>
+</head>
+<body>
+    <div class="header">
+        <img src="../CSS/UTN.jpg" alt="Logo">
+    </div>
+    <div class="nav-bar">
+        <a href='../index.html'>Inicio</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+    </div>
+    <img src="../img/carro4C.png" alt="#" class="imagen-estilo">
+
+    <form action="../php/total1.php" method="post" class="Formulario">
+        <section class="form-register">
+            <div class="column">
+                <h4>FORMATO DE COMPRA Y COTIZACION</h4>
+
+            <!-- Fecha de registro  -->
+                <h5></h5>
+                <h5>Fecha de registro/compra</h5>
+                <input class="controls" type="date" name="fecha_registro" id="fcregistro" placeholder="Fecha de Registro">
+
+                <!-- Datos del benefiiciario -->
+                <h4>Datos del beneficiario</h4>
+                <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required>
+                <label for="phone">Número de teléfono:</label>
+                <input class="controls" type="tel" id="phone" name="telefono"  title="Formato de teléfono: 123-456-7890">
+                <label for="email">Dirección de correo electrónico:</label>
+                <input class="controls" type="email" id="email" name="email">
+
+                <h4>Ubicación</h4>
+                <input class="controls" type="text" name="direccion" id="ubi" placeholder="Dirección">
+
+            </div>
+            
+            <div class="column">
+                <h4>Forma de pago</h4>
+                <select class="controls" id="muni" name="municipio" onchange="mostrarCampo()">
+                    <option value="efectivo">Efectivo</option>
+                    <option value="transferencia">Transferencia</option>
+                    <option value="tarjeta">Tarjeta</option>
+                </select>
+                
+                    <!-- Campo adicional para Tarjeta -->
+                    <div class="controls" id="campoTarjeta" style="display:none;">
+                        <label for="numeroTarjeta">Número de Tarjeta:</label>
+                        <input type="text" id="numeroTarjeta" name="numeroTarjeta">
+                    </div>
+                
+                    <!-- Campo adicional para Transferencia -->
+                    <div class="controls" id="campoTransferencia" style="display:none;">
+                        <label for="numeroCuenta">Número de Cuenta:</label>
+                        <input type="text" id="numeroCuenta" name="numeroCuenta">
+                    </div>
+              
+                
+                <!--Plan a meses  -->
+                
+                    <h4>Tipo de pago</h4>
+                    <div class="controls">
+                        <input type="radio" id="pagoMeses" name="tipoPagoOpcion" value="meses" onchange="mostrarOpcionesMeses()">
+                        <label for="pagoMeses">Meses</label>
+                    </div>
+                    <div class="controls">
+                        <input type="radio" id="contado" name="tipoPagoOpcion" value="contado" onchange="mostrarOpcionesMeses()">
+                        <label for="contado">Contado</label>
+                    </div>
+                
+                    <!-- Menú desplegable para las opciones de meses, oculto inicialmente -->
+                    <div id="opcionesMeses" style="display:none;">
+                        <label for="plazo">Elige el plazo:</label>
+                        <select class="controls" id="plazo" name="plazo">
+                            <option  value="12">12 meses</option>
+                            <option value="24">24 meses</option>
+                            <option value="36">36 meses</option>
+                            <option value="48">48 meses</option>
+                        </select>
+                        <p>El engache debe minimo 10% del precio fijo</p>
+                        <p>$1,355,900</p>
+                <input class="controls" type="number" name="enganche" id="enganche" placeholder="Enganche" >
+                    </div>
+                
+     
+                <button class="botons boton-enviar" type="submit">Enviar</button>
+    
+
+
+            </div>
+        </section> 
+
+        <script>
+            function mostrarCampo() {
+                var seleccion = document.getElementById("muni").value;
+                document.getElementById("campoTarjeta").style.display = (seleccion === "tarjeta") ? 'block' : 'none';
+                document.getElementById("campoTransferencia").style.display = (seleccion === "transferencia") ? 'block' : 'none';
+            }
+
+            function mostrarOpcionesMeses() {
+                var pagoMeses = document.getElementById("pagoMeses").checked;
+                document.getElementById("opcionesMeses").style.display = pagoMeses ? 'block' : 'none';
+            }
+        </script>
+    </form>
+
+
+    </form>
+</body>
+</html>

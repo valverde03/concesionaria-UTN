@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Venta de Autos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('CSS/portal.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @font-face {
+            font-family: "GameOfSquids";
+            src: url('fuente/game_of_squids/GameOfSquids.ttf') format('truetype');
+        }
+
+        .game-of-squids-font {
+            font-family: "GameOfSquids", sans-serif;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .image-box {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <!-- <img src="CSS/logo.png" alt="Logo Izquierda"> -->
+        <!-- <h1 class="game-of-squids-font">Urban Thrive Novelties</h1> -->
+        
+        <img src="CSS/UTN.jpg" >
+    </div>
+    <div class="nav-bar">
+        <a href="#">Inicio</a>
+        <a href="../ageCar/coti/sobreN.html">Sobre Nosotros</a>
+        <a href="../ageCar/coti/conT.html">Contacto</a>
+        <a href="../ageCar/coti/contacto.html">Registro</a>
+    </div>
+    <div class="image-container">
+       <!-- Carro 1 -->
+        <div class="image-box">
+            <img src="CSS/carro1.jpg" alt="Carro 1">
+          
+            <button class="btn-detalle" onclick="location.href='categoria.html';">Ver más</button>
+        </div>
+        
+        <!-- Carro 2 -->
+        <div class="image-box">
+            <img src="CSS/carro2.jpg" alt="Carro 2">
+            
+            <button class="btn-detalle" onclick="location.href='cat/categoria2.html';">Ver más</button>
+        </div>
+        <!-- Carro 3 -->
+        <div class="image-box">
+            <img src="CSS/carro3.jpg" alt="Carro 3">
+          
+            <button class="btn-detalle" onclick="location.href='cat/categoria3.html';">Ver más</button>
+        </div>
+
+        <!-- Carro 4 -->
+        <div class="image-box">
+            <img src="CSS/carro4.jpg" alt="Carro 4">
+           
+            <button class="btn-detalle" onclick="location.href='cat/categoria4.html';">Ver más</button>
+        </div>
+        <!-- Carro 5 -->
+        <div class="image-box">
+            <img src="CSS/carro5.jpg" alt="Carro 5">
+           
+            <button class="btn-detalle" onclick="location.href='cat/categoria5.html';">Ver más</button>
+        </div>
+        <!-- Carro 6 -->
+        <div class="image-box">
+            <img src="CSS/carro6.jpg" alt="Carro 6">
+       
+            <button class="btn-detalle" onclick="location.href='cat/categoria6.html';">Ver más</button>
+        </div>
+        
+        <!-- Fin de la galería de carros -->
+    </div>
+
+    <div class="video">
+    <video width="3020" height="240" controls autoplay muted>
+        <source src="nisan.mp4" type="video/mp4">
+        </div>
+     
+      </video>
+      
+
+</body>
+</html>
